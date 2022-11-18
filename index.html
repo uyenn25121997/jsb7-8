@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="w-50 py-5" style="margin: 0 auto;">
+        <h2>Bài tập JS buổi 18</h2>
+        <form action="">
+            <div class="form-group mt-4">
+                <input type="number" class="form-control" name="" placeholder="Nhập số n" id="inputNum">
+                <button type="button" onclick="themSo()" class="btn btn-primary mt-2">Thêm số</button>
+                <div class="mt-2 alert alert-success">
+                    👉 <span id="btnThem"></span>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <ul id="accordion" class="accordion">
+        <li>
+            <div class="link">Tổng số dương<i class="fa fa-chevron-down"></i></div>
+            <div class="submenu">
+                <button onclick="tongSoDuong()" class="btn btn-success mt-2">Tính toán</button>
+                <div class="mt-2 alert alert-success">
+                    Kết quả: <span id="btnTongDuong"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="link">Đếm số dương<i class="fa fa-chevron-down"></i></div>
+            <div class="submenu">
+                <button onclick="demSoDuong()" class="btn btn-success mt-2">Đếm số</button>
+                <div class="mt-2 alert alert-success">
+                    Kết quả: <span id="btnDemDuong"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="link">Tìm số nhỏ nhất<i class="fa fa-chevron-down"></i></div>
+            <div class="submenu">
+                <button onclick="soNhoNhat()" class="btn btn-success mt-2">Tìm số nhỏ nhất</button>
+                <div class="mt-2 alert alert-success">
+                    Kết quả: <span id="btnSoNhoNhat"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="link">Tìm số dương nhỏ nhất<i class="fa fa-chevron-down"></i></div>
+            <div class="submenu">
+                <button onclick="soDuongNho()" class="btn btn-success mt-2">Tìm số dương nhỏ nhất</button>
+                <div class="mt-2 alert alert-success">
+                    Kết quả: <span id="btnSoDuongNho"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="link">Tìm số chẵn cuối cùng<i class="fa fa-chevron-down"></i></div>
+            <div class="submenu">
+                <button onclick="soChanCuoi()" class="btn btn-success mt-2">Tìm số chẵn cuối cùng</button>
+                <div class="mt-2 alert alert-success">
+                    Kết quả: <span id="btnSoChanCuoi"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="link">Đổi chỗ<i class="fa fa-chevron-down"></i></div>
+            <div class="submenu">
+                <form action="" class="d-flex">
+                    <input type="number" class="form-control" name="" placeholder="Nhập số vị trí 1" id="viTri1">
+                    <input type="number" class="form-control" name="" placeholder="Nhập số vị trí 2" id="viTri2">
+                </form>
+                <button onclick="doiChoMang()" class="btn btn-success mt-2">Đổi chỗ</button>
+                <div class="mt-2 alert alert-success">
+                    Mảng sau khi đổi: <span id="btnDoiCho"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="link">Sắp xếp tăng dần<i class="fa fa-chevron-down"></i></div>
+            <div class="submenu">
+                <button onclick="soTangDan()" class="btn btn-success mt-2">Sắp xếp</button>
+                <div class="mt-2 alert alert-success">
+                    Kết quả: <span id="btnTangDan"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="link">Tìm số nguyên tố đầu tiên<i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="submenu">
+                <button onclick="soNguyenToDau()" class="btn btn-success mt-2">Tìm số nguyên tố đầu tiên</button>
+                <div class="mt-2 alert alert-success">
+                    Kết quả: <span id="btnSoNguyenToDau"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="link">Đếm số nguyên<i class="fa fa-chevron-down"></i></div>
+            <div class="submenu">
+                <button onclick="kiemTraSoNguyen()" class="btn btn-success mt-2">Đếm số nguyên</button>
+                <div class="mt-2 alert alert-success">
+                    Kết quả: <span id="btnSoNguyen"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="link">So sánh số lượng số âm và số dương<i
+                    class="fa fa-chevron-down"></i></div>
+            <div class="submenu">
+                <button onclick="soSanhSo()" class="btn btn-success mt-2">So sánh</button>
+                <div class="mt-2 alert alert-success">
+                    Kết quả: <span id="btnDemSoNguyen"></span>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+        </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/out.js"></script>\
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
